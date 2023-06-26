@@ -18,6 +18,7 @@ from agent_sim.prompts_library import (
     REFLECT_SYSTEM_PROMPT,
 )
 
+from agent_sim.load_case_laws import load_case_laws
 
 class Player:
     """
@@ -52,7 +53,9 @@ class Player:
         self.max_context_length = max_context_length
         self.memory: List[str] = []
         self.memory_length: int = 0
-
+        
+        # load case laws by calling load_case_laws
+        self.case_laws = load_case_laws("path/to/your/case_laws.txt")
 
     # respond function
 
