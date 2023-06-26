@@ -80,23 +80,23 @@ class Player:
         # relevant case law
         relevant_case_law = self.get_relevant_case_law(input_message)
         if relevant_case_law:
-            human_prompt += f"\n{self.role_name} learned the following case law prior to responding: {relevant_case_law}
+        #    human_prompt += f"\n{self.role_name} learned the following case law prior to responding: {relevant_case_law}
 
-        prompt = ChatPromptTemplate.from_messages(
-            [
-                SystemMessagePromptTemplate.from_template(self.inception_prompt),
-                HumanMessagePromptTemplate.from_template(human_prompt),
-            ]
-        ).format_messages(memory=self.memory)
+            prompt = ChatPromptTemplate.from_messages(
+                [
+                    SystemMessagePromptTemplate.from_template(self.inception_prompt),
+                    HumanMessagePromptTemplate.from_template(human_prompt),
+                ]
+            ).format_messages(memory=self.memory)
 
-        response = self.respond_model.predict_messages(
-            prompt, tags=[self.role_name, "respond"]
-        ).content
+            response = self.respond_model.predict_messages(
+                prompt, tags=[self.role_name, "respond"]
+            ).content
 
-        if remember:
-            self.add_to_memory(input_role, input_message)
-            self.add_to_memory(self.role_name, response)
-        return response
+            if remember:
+                self.add_to_memory(input_role, input_message)
+                self.add_to_memory(self.role_name, response)
+            return response
 
     # get_relevant_case_law before responding 
     # retrieve relevant case laws before generating response
