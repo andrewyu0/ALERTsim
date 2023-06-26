@@ -93,6 +93,19 @@ class Player:
             self.add_to_memory(self.role_name, response)
         return response
 
+    # get_relevant_case_law before responding 
+    # retrieve relevant case laws before generating response
+
+    def get_relevant_case_law(self, query: str) -> str:
+    # Replace this implementation with a function that retrieves relevant case laws based on the query
+        relevant_case_law = "" 
+        for case_law in self.case_laws:
+            if query.lower() in case_law.lower():
+                relevant_case_law = case_law
+                break
+
+        return relevant_case_law
+
     def add_to_memory(self, role: str, message: str) -> None:
         """
         Adds a message to the memory.
