@@ -23,12 +23,7 @@ class Player:
     """
     A class used to represent a player.
 
-    Attributes:
-        memory (List[str]): A list storing the messages.
-        memory_length (int): The length of the memory in characters.
-        respond_model (Model): A model used to process messages.
-        reflect_model (Model): A model used to summarize memories
-        inception_prompt (str): A string used as the initial prompt for the model.
+
     """
 
     def __init__(
@@ -41,6 +36,13 @@ class Player:
     ) -> None:
         """
         Constructs the necessary attributes for the player object.
+        
+        Attributes:
+        memory (List[str]): A list storing the messages.
+        memory_length (int): The length of the memory in characters.
+        respond_model (Model): A model used to process messages.
+        reflect_model (Model): A model used to summarize memories
+        inception_prompt (str): A string used as the initial prompt for the model.
         """
 
         self.respond_model = respond_model
@@ -51,9 +53,14 @@ class Player:
         self.memory: List[str] = []
         self.memory_length: int = 0
 
+
+    # respond function
+
     def respond(
         self, input_role: str, input_message: str, remember: bool = True
     ) -> Union[str, Any]:
+        
+        
         """
         Responds to a single message based on an input and the previous memory.
 
