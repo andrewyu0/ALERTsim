@@ -77,6 +77,11 @@ class Player:
             input_role=input_role,
         )
 
+        # relevant case law
+        relevant_case_law = self.get_relevant_case_law(input_message)
+        if relevant_case_law:
+            human_prompt += f"\n{self.role_name} learned the following case law prior to responding: {relevant_case_law}
+
         prompt = ChatPromptTemplate.from_messages(
             [
                 SystemMessagePromptTemplate.from_template(self.inception_prompt),

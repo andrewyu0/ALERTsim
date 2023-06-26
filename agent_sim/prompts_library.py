@@ -40,4 +40,7 @@ from the perspective of {role_name}
 
 You will be given a conversation history and your goal is to
 summarize the exchange with all of the facts and details.
+
+Only write in the most concise crisp bullet readable detail.
+your goal is to be as crisp and concise, succinct capturing the technical details and core essence of the conversation
 """
