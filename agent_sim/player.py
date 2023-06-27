@@ -22,12 +22,29 @@ class Player:
 
         prompt = ChatPromptTemplate.from_messages([SystemMessagePromptTemplate.from_template(self.inception_prompt), HumanMessagePromptTemplate.from_template(human_prompt)]).format_messages(memory=self.memory)
 
-        response = self.respond_model.predict_messages(prompt, tags=[self.role_name, "respond"]).content
+        human_prompt = INPUT_PROMPT.format(
+            role_name=self.role_name,
+            history="\n".join(self.memory),
+            message=input_message,
+            input_role=input_role,
+        )
+
+        prompt = ChatPromptTemplate.from_messages(
+            [
+                SystemMessagePromptTemplate.from_template(self.inception_prompt),
+                HumanMessagePromptTemplate.from_template(human_prompt),
+            ]
+        ).format_messages(memory=self.memory)
+
+        response = self.respond_model.predict_messages(
+            prompt, tags=[self.role_name, "respond"]
+        ).content
 
         if remember:
             self.add_to_memory(input_role, input_message)
             self.add_to_memory(self.role_name, response)
         return response
+
 
     def add_to_memory(self, role: str, message: str) -> None:
         message = f"{role}: {message}"
