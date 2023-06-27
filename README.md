@@ -6,6 +6,8 @@ This project demonstrates a chatbot simulation based on pre-trained language mod
 
 Run the notebook and interact in cell or on local URL:  http://127.0.0.1:7863
 
+Final transcripts in [this google doc](https://docs.google.com/document/d/1MGOz5tw8rkABnmboQCw4BjzYtYGKT3xyHBTe3uwVvZU/edit#heading=h.ef9v4jpiavgm) TODO - put in more structured data format
+
 <img width="1378" alt="image" src="https://github.com/andrewyu0/ALERTsim/assets/5696002/903fc05d-c657-460f-8003-96fb1adf15b4">
 
 
