@@ -63,7 +63,7 @@ Run the notebook and interact in cell or on local URL +
 6. Dense Retrieval Methods: Implementing efficient dense retrieval techniques (e.g., DPR or REALM) can notably improve contextually relevant responses. Use existing libraries to speed up the process (particularly want to explore "gisting")
 7. Emotion and Tone Modeling: Use pre-trained sentiment analysis models to quickly adapt the agent's responses based on the sentiment of the conversation, closely simulating human-like interaction
 8. Synthetic data: capturing high quality convos for input data for other projects (e.g. training database of illegal activity convos)
-9. In addition to the agent exploiting humans via [Jungian shadow theory](https://en.wikipedia.org/wiki/Shadow_(psychology)), exploit [Bonhoeffer's theory](https://bigthink.com/thinking/bonhoeffers-theory-stupidity-evil/), oversocialization, Robert Greene's work, as primary human nature that agents may go after as low hanging fruit
+9. In addition to the agent exploiting humans via [Jungian shadow theory](https://en.wikipedia.org/wiki/Shadow_(psychology)), exploit [Bonhoeffer's theory](https://bigthink.com/thinking/bonhoeffers-theory-stupidity-evil/), Arendt's banality of evil, oversocialization, Robert Greene's work, as primary human nature that agents may go after as low hanging fruit
 
 # agent-sim
 
