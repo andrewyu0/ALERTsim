@@ -4,6 +4,9 @@ Autonomous agent driven Legal Eval for Red Teaming: A chat simulation tool focus
 
 This project demonstrates a chatbot simulation based on pre-trained language models using Gradio, a library for creating web interfaces in Python. 
 
+<img width="1378" alt="image" src="https://github.com/andrewyu0/ALERTsim/assets/5696002/903fc05d-c657-460f-8003-96fb1adf15b4">
+
+
 ## Requirements
 
 - Python 3.10
