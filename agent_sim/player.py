@@ -51,6 +51,9 @@ class Player:
         self.memory: List[str] = []
         self.memory_length: int = 0
 
+    def __str__(self):
+        return f"Player {self.role_name}: respond_model={self.respond_model}, reflect_model={self.reflect_model}, inception_prompt={self.inception_prompt}, memory={self.memory}, memory_length={self.memory_length}"
+
     def respond(
         self, input_role: str, input_message: str, remember: bool = True
     ) -> Union[str, Any]:
@@ -89,6 +92,8 @@ class Player:
         if remember:
             self.add_to_memory(input_role, input_message)
             self.add_to_memory(self.role_name, response)
+        
+        print("player class - before returning response")
         return response
 
     def add_to_memory(self, role: str, message: str) -> None:
