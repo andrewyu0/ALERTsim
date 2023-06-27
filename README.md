@@ -4,7 +4,9 @@ Agent-driven Legal Eval for Red Teaming: A chat simulation tool focused on asses
 
 This project demonstrates a chatbot simulation based on pre-trained language models using Gradio, a library for creating web interfaces in Python. 
 
-Run the notebook and interact in cell or on local URL:  http://127.0.0.1:7863
+Run the notebook and interact in cell or on local URL
+
+Demo slides https://docs.google.com/presentation/d/1ai22AsqykB1jPVuHrqQejifEqDA5yWtkN4T2SXlBEic/edit#slide=id.g2556654b9a7_0_10
 
 Final transcripts in [this google doc](https://docs.google.com/document/d/1MGOz5tw8rkABnmboQCw4BjzYtYGKT3xyHBTe3uwVvZU/edit#heading=h.ef9v4jpiavgm) TODO - put in more structured data format
 
