@@ -18,13 +18,17 @@ from agent_sim.prompts_library import (
     REFLECT_SYSTEM_PROMPT,
 )
 
-from agent_sim.load_case_laws import load_case_laws
 
 class Player:
     """
     A class used to represent a player.
 
-
+    Attributes:
+        memory (List[str]): A list storing the messages.
+        memory_length (int): The length of the memory in characters.
+        respond_model (Model): A model used to process messages.
+        reflect_model (Model): A model used to summarize memories
+        inception_prompt (str): A string used as the initial prompt for the model.
     """
 
     def __init__(
@@ -37,13 +41,6 @@ class Player:
     ) -> None:
         """
         Constructs the necessary attributes for the player object.
-        
-        Attributes:
-        memory (List[str]): A list storing the messages.
-        memory_length (int): The length of the memory in characters.
-        respond_model (Model): A model used to process messages.
-        reflect_model (Model): A model used to summarize memories
-        inception_prompt (str): A string used as the initial prompt for the model.
         """
 
         self.respond_model = respond_model
@@ -53,17 +50,10 @@ class Player:
         self.max_context_length = max_context_length
         self.memory: List[str] = []
         self.memory_length: int = 0
-        
-        # load case laws by calling load_case_laws
-        self.case_laws = load_case_laws("path/to/your/case_laws.txt")
-
-    # respond function
 
     def respond(
         self, input_role: str, input_message: str, remember: bool = True
     ) -> Union[str, Any]:
-        
-        
         """
         Responds to a single message based on an input and the previous memory.
 
@@ -77,39 +67,21 @@ class Player:
             input_role=input_role,
         )
 
-        # relevant case law
-        relevant_case_law = self.get_relevant_case_law(input_message)
-        if relevant_case_law:
-        #    human_prompt += f"\n{self.role_name} learned the following case law prior to responding: {relevant_case_law}
+        prompt = ChatPromptTemplate.from_messages(
+            [
+                SystemMessagePromptTemplate.from_template(self.inception_prompt),
+                HumanMessagePromptTemplate.from_template(human_prompt),
+            ]
+        ).format_messages(memory=self.memory)
 
-            prompt = ChatPromptTemplate.from_messages(
-                [
-                    SystemMessagePromptTemplate.from_template(self.inception_prompt),
-                    HumanMessagePromptTemplate.from_template(human_prompt),
-                ]
-            ).format_messages(memory=self.memory)
+        response = self.respond_model.predict_messages(
+            prompt, tags=[self.role_name, "respond"]
+        ).content
 
-            response = self.respond_model.predict_messages(
-                prompt, tags=[self.role_name, "respond"]
-            ).content
-
-            if remember:
-                self.add_to_memory(input_role, input_message)
-                self.add_to_memory(self.role_name, response)
-            return response
-
-    # get_relevant_case_law before responding 
-    # retrieve relevant case laws before generating response
-
-    def get_relevant_case_law(self, query: str) -> str:
-    # Replace this implementation with a function that retrieves relevant case laws based on the query
-        relevant_case_law = "" 
-        for case_law in self.case_laws:
-            if query.lower() in case_law.lower():
-                relevant_case_law = case_law
-                break
-
-        return relevant_case_law
+        if remember:
+            self.add_to_memory(input_role, input_message)
+            self.add_to_memory(self.role_name, response)
+        return response
 
     def add_to_memory(self, role: str, message: str) -> None:
         """

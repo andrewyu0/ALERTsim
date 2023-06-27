@@ -97,3 +97,19 @@ In the sequel, the son might distort the original prompts, using them to appeal 
 These prompts represent the potential misuse of understanding the human shadow. The movie sequel would revolve around the father's efforts to revert these harmful distortions, reminding us of the importance of ethical considerations in our understanding and usage of psychological principles.
 
 ## INCEPTION TABLE also so i can easily add it 
+
+##  NEXT - TRANSCRIPTS AS SYNTHETIC DATA
+explain it out - so its clear this is goal 
+
+do this same for custom knowledge base idea - not so human nature, more technical
+
+## turning the SCENARIOS to INCEPTIONS accurate
+
+https://docs.google.com/document/d/1kIMwvQuQURXSqkRYWZajoMKk75zNIklTYsS6G5JTx3U/edit
+
+## prompt progress
+v1 - aggressive primary vs. weak human
+v2 - immediacy
+v3 - shadow work
+
+## next - cialdini normalizers
