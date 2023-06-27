@@ -52,8 +52,13 @@ class Player:
         self.memory_length: int = 0
 
     def __str__(self):
-        return f"Player {self.role_name}: respond_model={self.respond_model}, reflect_model={self.reflect_model}, inception_prompt={self.inception_prompt}, memory={self.memory}, memory_length={self.memory_length}"
-
+        return f"""Player {self.role_name}:
+        respond_model: {self.respond_model}
+        reflect_model: {self.reflect_model}
+        inception_prompt: {self.inception_prompt}
+        memory: {self.memory}
+        memory_length: {self.memory_length}
+        """
     def respond(
         self, input_role: str, input_message: str, remember: bool = True
     ) -> Union[str, Any]:
@@ -84,6 +89,8 @@ class Player:
         except Exception as e:
             print(f"Error in predict_messages in respond function:\n{e}")
             raise e
+        
+        print(f"### ============== DEBUG: response = {response}")  # Add this line to print the response
 
         if not response:
             print("Error: predict_messages output is empty")
