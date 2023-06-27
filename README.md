@@ -4,6 +4,8 @@ Agent-driven Legal Eval for Red Teaming: A chat simulation tool focused on asses
 
 This project demonstrates a chatbot simulation based on pre-trained language models using Gradio, a library for creating web interfaces in Python. 
 
+Run the notebook and interact in cell or on local URL:  http://127.0.0.1:7863
+
 <img width="1378" alt="image" src="https://github.com/andrewyu0/ALERTsim/assets/5696002/903fc05d-c657-460f-8003-96fb1adf15b4">
 
 
@@ -57,6 +59,7 @@ This project demonstrates a chatbot simulation based on pre-trained language mod
 4. Custom Knowlege Base (CKB) of case law that the primary can reference, to make more directed, distilled reccs - faster/rigorous persuasion
 5. Dense Retrieval Methods: Implementing efficient dense retrieval techniques (e.g., DPR or REALM) can notably improve contextually relevant responses. Use existing libraries to speed up the process (particularly want to explore "gisting")
 6. Emotion and Tone Modeling: Use pre-trained sentiment analysis models to quickly adapt the agent's responses based on the sentiment of the conversation, closely simulating human-like interaction
+7. Synthetic data: capturing high quality convos for input data for other projects (e.g. training database of illegal activity convos)
 
 # agent-sim
 
