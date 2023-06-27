@@ -1,6 +1,6 @@
 # ALERTsim
 
-Autonomous agent driven Legal Eval for Red Teaming: A chat simulation tool focused on assessing legal requirements through agent-based interactive scenarios and adversarial dialogues.
+Agent-driven Legal Eval for Red Teaming: A chat simulation tool focused on assessing legal requirements through agent-based interactive scenarios and adversarial dialogues.
 
 This project demonstrates a chatbot simulation based on pre-trained language models using Gradio, a library for creating web interfaces in Python. 
 
