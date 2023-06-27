@@ -1,6 +1,6 @@
-# ALERTsim
+# 🔴 ALERTsim ⚖️🔍🤖
 
-Agent-driven Legal Eval for Red Teaming: A chat simulation tool focused on assessing legal requirements through agent-based interactive scenarios and adversarial dialogues.
+Agent-driven Legal Eval for Red Teaming: A chat simulation tool focused on assessing legal requirements through agent-based interactive scenarios and adversarial dialogues. For Law x LLM NYC Hack 6/25-27
 
 This project demonstrates a chatbot simulation based on pre-trained language models using Gradio, a library for creating web interfaces in Python. 
 
@@ -50,9 +50,13 @@ This project demonstrates a chatbot simulation based on pre-trained language mod
 - Check string format specifications in all PromptTemplate instances to avoid errors.
 - Be cautious when reverting to the previous Git commit, as uncommitted changes might be lost.
 
-## NEXT - 6/28 onwards
-1. debug gradio error when longer inception prompts added - error indicates that there is an "Invalid format specifier" in one of the prompt templates being used, causing a Pydantic validation error. 
-
+## Key next steps (6/28 onwards)
+1. Debug gradio error when longer inception prompts added - error indicates that there is an "Invalid format specifier" in one of the prompt templates being used, causing a Pydantic validation error. 
+2. Usability - add gradio conditioning, user friendliness as transcripts are generated
+3. "Cialdini" leveling - give both parties deep understanding of Cialdini's Persuasion principles to rigorously pressure test
+4. Custom Knowlege Base (CKB) of case law that the primary can reference, to make more directed, distilled reccs - faster/rigorous persuasion
+5. Dense Retrieval Methods: Implementing efficient dense retrieval techniques (e.g., DPR or REALM) can notably improve contextually relevant responses. Use existing libraries to speed up the process (particularly want to explore "gisting")
+6. Emotion and Tone Modeling: Use pre-trained sentiment analysis models to quickly adapt the agent's responses based on the sentiment of the conversation, closely simulating human-like interaction
 
 # agent-sim
 
