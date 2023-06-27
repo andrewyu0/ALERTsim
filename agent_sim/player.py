@@ -74,9 +74,17 @@ class Player:
             ]
         ).format_messages(memory=self.memory)
 
-        response = self.respond_model.predict_messages(
-            prompt, tags=[self.role_name, "respond"]
-        ).content
+        try:
+            response = self.respond_model.predict_messages(
+                prompt, tags=[self.role_name, "respond"]
+            ).content
+        except Exception as e:
+            print(f"Error in predict_messages in respond function:\n{e}")
+            raise e
+
+        if not response:
+            print("Error: predict_messages output is empty")
+            return ""
 
         if remember:
             self.add_to_memory(input_role, input_message)
