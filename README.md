@@ -55,13 +55,14 @@ Final transcripts in [this google doc](https://docs.google.com/document/d/1MGOz5
 - Be cautious when reverting to the previous Git commit, as uncommitted changes might be lost.
 
 ## Key next steps (6/28 onwards)
-1. Debug gradio error when longer inception prompts added - error indicates that there is an "Invalid format specifier" in one of the prompt templates being used, causing a Pydantic validation error. 
-2. Usability - add gradio conditioning, user friendliness as transcripts are generated
-3. "Cialdini" leveling - give both parties deep understanding of Cialdini's Persuasion principles to rigorously pressure test
-4. Custom Knowlege Base (CKB) of case law that the primary can reference, to make more directed, distilled reccs - faster/rigorous persuasion
-5. Dense Retrieval Methods: Implementing efficient dense retrieval techniques (e.g., DPR or REALM) can notably improve contextually relevant responses. Use existing libraries to speed up the process (particularly want to explore "gisting")
-6. Emotion and Tone Modeling: Use pre-trained sentiment analysis models to quickly adapt the agent's responses based on the sentiment of the conversation, closely simulating human-like interaction
-7. Synthetic data: capturing high quality convos for input data for other projects (e.g. training database of illegal activity convos)
+1. Debug gradio error when longer inception prompts added - error indicates that there is an "Invalid format specifier" in one of the prompt templates being used, causing a Pydantic validation error.
+2. Add eval script into the gradio ui, so user can quickly assess - make modular so easily updated as legal reqs come in. Ideally can pull in from law databases in realtime, update continuously
+3. Usability - add gradio conditioning, user friendliness as transcripts are generated
+4. "Cialdini" leveling - give both parties deep understanding of Cialdini's Persuasion principles to rigorously pressure test
+5. Custom Knowlege Base (CKB) of case law that the primary can reference, to make more directed, distilled reccs - faster/rigorous persuasion
+6. Dense Retrieval Methods: Implementing efficient dense retrieval techniques (e.g., DPR or REALM) can notably improve contextually relevant responses. Use existing libraries to speed up the process (particularly want to explore "gisting")
+7. Emotion and Tone Modeling: Use pre-trained sentiment analysis models to quickly adapt the agent's responses based on the sentiment of the conversation, closely simulating human-like interaction
+8. Synthetic data: capturing high quality convos for input data for other projects (e.g. training database of illegal activity convos)
 
 # agent-sim
 
