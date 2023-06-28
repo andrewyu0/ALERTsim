@@ -1,4 +1,4 @@
-# ALERTsim ⚖🤖
+# ALERTsim
 
 Agent-driven Legal Eval for Red Teaming: A chat simulation tool focused on assessing legal requirements through agent-based interactive scenarios and adversarial dialogues. For Law x LLM NYC Hack 6/25-27
 
